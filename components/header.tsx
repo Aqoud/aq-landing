@@ -8,6 +8,10 @@ import { Button } from '@/components/ui/button'
 export function Header() {
   const [isOpen, setIsOpen] = useState(false)
 
+  const gotToAppPage = () => {
+    window.open('https://app.uqud.ai', '_blank')
+  }
+
   return (
     <header className="sticky top-0 z-50 border-b border-border/40 bg-background/95 backdrop-blur-sm">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
@@ -31,10 +35,10 @@ export function Header() {
 
         {/* CTA Buttons */}
         <div className="hidden items-center gap-4 md:flex">
-          <Button variant="outline" className="border-border hover:bg-gray-200 hover:text-gray-800">
+          <Button onClick={gotToAppPage} variant="outline" className="border-border hover:bg-gray-200 hover:text-gray-800">
             Sign In
           </Button>
-          <Button className="bg-primary hover:bg-primary/90">
+          <Button onClick={gotToAppPage} className="bg-primary hover:bg-primary/90">
             Get Started Free
           </Button>
         </div>
@@ -62,7 +66,7 @@ export function Header() {
               Resources
             </a>
             <div className="flex flex-col gap-2 pt-2">
-              <Button variant="outline" className="w-full border-border">
+              <Button variant="outline" className="w-full border-border" onClick={gotToAppPage}>
                 Sign In
               </Button>
               <Button className="w-full bg-primary hover:bg-primary/90">
